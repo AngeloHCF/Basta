@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -9,11 +10,13 @@ template <typename T> struct ListNode {
 };
 
 ListNode<int> *solution(ListNode<int> *l, int k) {
-  int reverse = 1;
+  vector<ListNode<int> *> storage;
+
   ListNode<int> *current = l;
   while (current->next != nullptr) {
     if (reverse < k) {
       ListNode<int> *curr = current;
+      ListNode<int>
     }
   }
 }
@@ -37,6 +40,11 @@ int main() {
   two->next = three;
   three->next = four;
   four->next = five;
+
+  output(one);
+  reverse(one);
+  cout << "\n";
+  output(five);
 
   int k = 2;
   ListNode<int> *answer = solution(one, k);
