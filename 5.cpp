@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -9,16 +10,35 @@ template <typename T> struct ListNode {
 };
 
 ListNode<int> *solution(ListNode<int> *l, int k) {
-  int reverse = 1;
+  vector<ListNode<int> *> storage;
+
   ListNode<int> *current = l;
-  while (current->next != nullptr) {
-    if (reverse < k) {
-      ListNode<int> *curr = current;
-      ListNode<int> *next_node = current->next;
-      ListNode<int> *next_node_node = current;
+
+  bool reached_end = false;
+
+  while (!reached_end) {
+    int count = 0;
+    while (k > count) {
+      storage.push_back(current);
+      current = current->next;
+      count++;
+    }
+
+    if (k == count) {
+      ListNode<int> *curr = storage[0];
+      ListNode<int> *next = nullptr;
+      ListNode<int> *last = nullptr;
+      for (int i = 0; i < storage.size() - 1; i++) {
+        next = storage[i + 1];
+        curr = last;
+        last = curr;
+        curr = next;
+      }
+    } else {
+      reached_end = true;
+      // last nodes must point to the nodes
     }
   }
-  return l;
 }
 
 void reverse(ListNode<int> *l) {
