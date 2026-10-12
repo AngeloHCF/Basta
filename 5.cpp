@@ -14,8 +14,31 @@ ListNode<int> *solution(ListNode<int> *l, int k) {
   while (current->next != nullptr) {
     if (reverse < k) {
       ListNode<int> *curr = current;
-      ListNode<int>
+      ListNode<int> *next_node = current->next;
+      ListNode<int> *next_node_node = current;
     }
+  }
+  return l;
+}
+
+void reverse(ListNode<int> *l) {
+  ListNode<int> *current = l;
+  ListNode<int> *next = nullptr;
+  ListNode<int> *last = nullptr;
+
+  while (current->next != nullptr) {
+    current->next = last;
+    last = current;
+    current = current->next;
+  }
+}
+
+void output(ListNode<int> *l) {
+  ListNode<int> *current = l;
+
+  while (current != nullptr) {
+    cout << current->value;
+    current = current->next;
   }
 }
 
@@ -38,6 +61,11 @@ int main() {
   two->next = three;
   three->next = four;
   four->next = five;
+
+  output(one);
+  reverse(one);
+  cout << "\n";
+  output(five);
 
   int k = 2;
   ListNode<int> *answer = solution(one, k);
