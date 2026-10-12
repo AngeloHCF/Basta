@@ -27,9 +27,10 @@ void reverse(ListNode<int> *l) {
   ListNode<int> *last = nullptr;
 
   while (current->next != nullptr) {
+    next = current->next;
     current->next = last;
     last = current;
-    current = current->next;
+    current = next;
   }
 }
 
