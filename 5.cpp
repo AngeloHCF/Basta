@@ -14,7 +14,6 @@ ListNode<int> *solution(ListNode<int> *l, int k) {
   while (current->next != nullptr) {
     if (reverse < k) {
       ListNode<int> *curr = current;
-      ListNode<int>
     }
   }
 }
