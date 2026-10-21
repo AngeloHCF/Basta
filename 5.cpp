@@ -66,7 +66,6 @@ void output(ListNode<int> *l) {
 void deleteNodes(ListNode<int> *l) {
   ListNode<int> *temp = l;
   while (temp != nullptr) {
-    ListNode<int> *next = temp->next;
     delete temp;
     temp = next;
   }
