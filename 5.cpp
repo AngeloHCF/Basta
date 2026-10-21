@@ -13,11 +13,53 @@ ListNode<int> *solution(ListNode<int> *l, int k) {
   vector<ListNode<int> *> storage;
 
   ListNode<int> *current = l;
-  while (current->next != nullptr) {
-    if (reverse < k) {
-      ListNode<int> *curr = current;
-      ListNode<int>
+
+  bool reached_end = false;
+
+  while (!reached_end) {
+    int count = 0;
+    while (k > count) {
+      storage.push_back(current);
+      current = current->next;
+      count++;
     }
+
+    if (k == count) {
+      ListNode<int> *curr = storage[0];
+      ListNode<int> *next = nullptr;
+      ListNode<int> *last = nullptr;
+      for (int i = 0; i < storage.size() - 1; i++) {
+        next = storage[i + 1];
+        curr = last;
+        last = curr;
+        curr = next;
+      }
+    } else {
+      reached_end = true;
+      // last nodes must point to the nodes
+    }
+  }
+}
+
+void reverse(ListNode<int> *l) {
+  ListNode<int> *current = l;
+  ListNode<int> *next = nullptr;
+  ListNode<int> *last = nullptr;
+
+  while (current->next != nullptr) {
+    next = current->next;
+    current->next = last;
+    last = current;
+    current = next;
+  }
+}
+
+void output(ListNode<int> *l) {
+  ListNode<int> *current = l;
+
+  while (current != nullptr) {
+    cout << current->value;
+    current = current->next;
   }
 }
 
