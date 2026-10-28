@@ -32,6 +32,7 @@ int solution(vector<int> nums) {
 
 int main() {
   int ahmed = 5;
+  int angelo = 10;
   vector<int> nums = {-5, -10, 0, -3};
   cout << solution(nums);
 }
