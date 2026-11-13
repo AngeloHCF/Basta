@@ -12,6 +12,22 @@ string reverseString(string input) {
 }
 
 int main() {
-  string str = "olegna si eman ym";
+  string str = "hello";
   cout << reverseString(str);
 }
+
+/*
+"hello"
+""
+h + ""
+e + h
+l + he
+l + hel
+o + hell
+
+h
+eh
+leh
+lleh
+olleh
+*/
