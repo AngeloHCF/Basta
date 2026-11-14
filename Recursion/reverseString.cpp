@@ -7,8 +7,9 @@ string reverseString(string input) {
   if (input == "")
     return "";
 
-  return input.at(input.size() - 1) +
-         reverseString(input.substr(0, input.size() - 1));
+  return reverseString(input.substr(1)) + input.at(0);
+  // return input.at(input.size() - 1) + reverseString(input.substr(0,
+  // input.size() - 1));
 }
 
 int main() {
