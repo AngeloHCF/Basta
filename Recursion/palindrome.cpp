@@ -14,6 +14,6 @@ bool palindrome(string str) {
 }
 
 int main() {
-  string str = "dad";
+  string str = "";
   cout << boolalpha << palindrome(str);
 }
